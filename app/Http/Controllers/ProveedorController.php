@@ -50,7 +50,8 @@ class ProveedorController extends Controller
 
     public function show(string $id)
     {
-        $proveedor=Proveedor::select("proveedor.*")->where("proveedor.id",$id)->first();
+        $proveedor=Proveedor::select("proveedor.*")
+        ->where("proveedor.id",$id)->first();
         return response()->json([
             "ok"=>true,
             "data"=>$proveedor,

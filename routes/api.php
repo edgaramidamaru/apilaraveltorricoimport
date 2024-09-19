@@ -1,7 +1,9 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\ClienteController;
 use App\Http\Controllers\ProveedorController;
+use App\Http\Controllers\ProductoController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -34,6 +36,20 @@ Route::get('/proveedor/show/{id}', [ProveedorController::class, 'show']);
 Route::get('/proveedor/showto', [ProveedorController::class, 'showto']);
 Route::put('/proveedor/update/{id}', [ProveedorController::class, 'update']);
 Route::delete('/proveedor/destroy/{id}', [ProveedorController::class, 'destroy']);
+//cliente 
+
+Route::post('/cliente/store', [ClienteController::class, 'store']);
+Route::get('/cliente/show/{id}', [ClienteController::class, 'show']);
+Route::get('/cliente/showto', [ClienteController::class, 'showto']);
+Route::put('/cliente/update/{id}', [ClienteController::class, 'update']);
+Route::delete('/cliente/destroy/{id}', [ClienteController::class, 'destroy']);
+
+//producto
+Route::post('/productos/store', [ProductoController::class, 'store']);
+Route::get('/productos/show/{id}', [ProductoController::class, 'show']);
+Route::get('/productos/showto', [ProductoController::class, 'showto']);
+Route::put('/productos/update/{id}', [ProductoController::class, 'update']);
+Route::delete('/productos/destroy/{id}', [ProductoController::class, 'destroy']);
 
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {

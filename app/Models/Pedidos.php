@@ -7,5 +7,13 @@ use Illuminate\Database\Eloquent\Model;
 
 class Pedidos extends Model
 {
-    use HasFactory;
+    public $table="pedidos";
+    protected $fillable=[
+        'nombreproducto',
+        'descripcionproducto',
+        'cantidad',
+        'nombreprovedor',
+    ];
+    public $timestamps=false;
+
 }

@@ -12,7 +12,7 @@ class Pedidos extends Model
         'nombreproducto',
         'descripcionproducto',
         'cantidad',
-        'nombreprovedor',
+        'nombreprovedor'
     ];
     public $timestamps=false;
 

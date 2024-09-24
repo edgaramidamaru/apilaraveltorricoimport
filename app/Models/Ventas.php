@@ -7,5 +7,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class Ventas extends Model
 {
-    use HasFactory;
+    public $table="ventas";
+    protected $fillable=[
+        'nombrecliente',
+        'nombreproducto',
+        'precio'
+    ];
+    public $timestamps=false;
 }

@@ -5,6 +5,7 @@ use App\Http\Controllers\ClienteController;
 use App\Http\Controllers\PedidoController;
 use App\Http\Controllers\ProveedorController;
 use App\Http\Controllers\ProductoController;
+use App\Http\Controllers\VentasController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -59,6 +60,12 @@ Route::get('/pedidos/showto', [PedidoController::class, 'showto']);
 Route::put('/pedidos/update/{id}', [PedidoController::class, 'update']);
 Route::delete('/pedidos/destroy/{id}', [PedidoController::class, 'destroy']);
 
+//ventas
+Route::post('/ventas/store', [VentasController::class, 'store']);
+Route::get('/ventas/show/{id}', [VentasController::class, 'show']);
+Route::get('/ventas/showto', [VentasController::class, 'showto']);
+Route::put('/ventas/update/{id}', [VentasController::class, 'update']);
+Route::delete('/ventas/destroy/{id}', [VentasController::class, 'destroy']);
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
